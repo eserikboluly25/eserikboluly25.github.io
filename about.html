@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="О Серикболулы Ерсултане — начинающем IT-разработчике из АПЕК."
+    />
+    <title>Обо мне</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <style>
+      :root {
+        --ink: #101126;
+        --paper: #f4f1e9;
+        --lime: #d9ff49;
+        --blue: #8798ff;
+        --line: rgba(16, 17, 38, 0.18);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        min-width: 320px;
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .page {
+        width: min(100% - 48px, 1320px);
+        min-height: 100vh;
+        margin: 0 auto;
+      }
+
+      header {
+        min-height: 84px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+
+      .logo-mark {
+        width: 30px;
+        height: 30px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--ink);
+        border-radius: 50%;
+        font-family: Georgia, serif;
+        font-style: italic;
+        font-size: 1.1rem;
+      }
+
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+
+      .back span { font-size: 1.3rem; transition: transform 0.2s ease; }
+      .back:hover span { transform: translateX(-4px); }
+
+      main { padding: 80px 0 32px; }
+
+      .eyebrow {
+        margin: 0 0 24px;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+
+      h1 {
+        max-width: 1100px;
+        margin: 0;
+        font-size: clamp(3.5rem, 8.3vw, 9.2rem);
+        line-height: 0.83;
+        letter-spacing: -0.09em;
+      }
+
+      h1 em {
+        color: #5c67d8;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 80px;
+        margin-top: 84px;
+        padding-bottom: 84px;
+      }
+
+      .intro-copy {
+        max-width: 610px;
+        font-size: clamp(1.35rem, 2vw, 2rem);
+        line-height: 1.16;
+        letter-spacing: -0.04em;
+      }
+
+      .intro-copy p { margin: 0 0 24px; }
+      .intro-copy strong { color: #5c67d8; }
+
+      .facts {
+        display: grid;
+        gap: 0;
+        align-self: start;
+        border-top: 1px solid var(--line);
+      }
+
+      .fact {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 15px;
+        padding: 19px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .fact span {
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+
+      .fact b { font-size: 1rem; line-height: 1.3; }
+
+      .learning {
+        margin: 0 calc((100vw - min(100vw - 48px, 1320px)) / -2);
+        padding: 104px max(24px, calc((100vw - min(100vw - 48px, 1320px)) / 2));
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .learning-inner {
+        width: min(100%, 1320px);
+        margin: 0 auto;
+      }
+
+      .learning-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 44px;
+      }
+
+      h2 {
+        max-width: 780px;
+        margin: 0;
+        font-size: clamp(2.7rem, 5.6vw, 6.3rem);
+        line-height: 0.87;
+        letter-spacing: -0.08em;
+      }
+
+      h2 em {
+        color: var(--lime);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+      }
+
+      .learning-note {
+        max-width: 280px;
+        margin: 0;
+        color: rgba(244, 241, 233, 0.7);
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .skill {
+        min-height: 210px;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid rgba(244, 241, 233, 0.25);
+      }
+
+      .skill-number {
+        color: var(--lime);
+        font-size: 0.72rem;
+        font-weight: 800;
+      }
+
+      .skill h3 {
+        margin: 0;
+        font-size: clamp(1.8rem, 3vw, 3.5rem);
+        line-height: 0.9;
+        letter-spacing: -0.07em;
+      }
+
+      .goal {
+        display: grid;
+        grid-template-columns: 0.55fr 1.45fr;
+        gap: 50px;
+        padding: 110px 0;
+      }
+
+      .goal-text {
+        max-width: 850px;
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 4.5rem);
+        font-weight: 700;
+        line-height: 0.94;
+        letter-spacing: -0.07em;
+      }
+
+      .goal-text em {
+        color: #5c67d8;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+      }
+
+      footer {
+        min-height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid var(--line);
+        color: rgba(16, 17, 38, 0.62);
+        font-size: 0.67rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      footer a { color: #5c67d8; }
+
+      @media (max-width: 800px) {
+        .page { width: min(100% - 32px, 1320px); }
+        header { min-height: 72px; }
+        main { padding-top: 58px; }
+        h1 { font-size: clamp(3.4rem, 14vw, 6.3rem); }
+        .intro { grid-template-columns: 1fr; gap: 42px; margin-top: 58px; padding-bottom: 65px; }
+        .fact { grid-template-columns: 108px 1fr; }
+        .learning {
+          margin: 0 -16px;
+          padding: 75px 16px;
+        }
+        .learning-heading { display: block; }
+        .learning-note { margin-top: 25px; }
+        .skills { grid-template-columns: 1fr; }
+        .skill { min-height: 145px; }
+        .goal { grid-template-columns: 1fr; gap: 25px; padding: 78px 0; }
+        footer { min-height: 92px; flex-wrap: wrap; padding: 14px 0; }
+      }
+    </style>
+    <link rel="stylesheet" href="motion.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <a class="logo" href="index.html" aria-label="На главную">
+          <span class="logo-mark">E</span>
+          <span>ERSULTAN</span>
+        </a>
+        <nav class="top-nav" aria-label="Навигация по сайту">
+          <a class="is-active" href="about.html">Обо мне</a>
+          <a href="services.html">Услуги</a>
+          <a href="projects.html">Проекты</a>
+          <a href="contact.html">Контакты</a>
+        </nav>
+        <a class="back" href="index.html"><span>←</span> НА ГЛАВНУЮ</a>
+      </header>
+
+      <a class="scroll-cue" href="#site-footer" aria-label="Перейти к нижней части страницы">
+        <span>ЛИСТАЙ НИЖЕ</span>
+        <span class="scroll-arrow" aria-hidden="true">↓</span>
+      </a>
+
+      <main>
+        <p class="eyebrow">01 / ОБО МНЕ</p>
+        <h1>
+          Серикболулы
+          <br />
+          <em>Ерсултан.</em>
+        </h1>
+
+        <section class="intro">
+          <div class="intro-copy">
+            <p>
+              Я начинающий <strong>IT-разработчик</strong>. Учусь создавать
+              современные сайты и хочу, чтобы каждая моя работа была понятной,
+              полезной и запоминающейся.
+            </p>
+            <p>
+              Сейчас я учусь в колледже <strong>APEC Petrotechnic Higher College</strong> и каждый день
+              развиваю навыки в веб-разработке.
+            </p>
+          </div>
+
+          <div class="facts" aria-label="Коротко обо мне">
+            <div class="fact"><span>Меня зовут</span><b>Серикболулы Ерсултан</b></div>
+            <div class="fact"><span>НАПРАВЛЕНИЕ</span><b>IT-разработка и веб-дизайн</b></div>
+            <div class="fact"><span>ОБУЧЕНИЕ</span><b>APEC Petrotechnic Higher College</b></div>
+            <div class="fact"><span>СЕЙЧАС</span><b>Начинающий IT-разработчик</b></div>
+          </div>
+        </section>
+      </main>
+
+      <section class="learning">
+        <div class="learning-inner">
+          <div class="learning-heading">
+            <h2>То, что я<br /><em>изучаю сейчас.</em></h2>
+            <p class="learning-note">
+              Собираю прочную базу, чтобы уверенно переходить от учебных
+              проектов к настоящим задачам.
+            </p>
+          </div>
+
+          <div class="skills">
+            <article class="skill">
+              <span class="skill-number">01</span>
+              <h3>HTML<br />&amp; CSS</h3>
+            </article>
+            <article class="skill">
+              <span class="skill-number">02</span>
+              <h3>JavaScript</h3>
+            </article>
+            <article class="skill">
+              <span class="skill-number">03</span>
+              <h3>Веб-дизайн</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="goal">
+        <p class="eyebrow">МОЯ ЦЕЛЬ</p>
+        <p class="goal-text">
+          Стать разработчиком, который соединяет <em>логику, дизайн</em> и
+          внимание к людям в одном сильном продукте.
+        </p>
+      </section>
+
+      <footer id="site-footer">
+        <span>© ERSULTAN, 2026</span>
+        <span>LEARNING · BUILDING · GROWING</span>
+        <a href="projects.html">СМОТРЕТЬ ПРОЕКТЫ →</a>
+      </footer>
+    </div>
+  </body>
+</html>

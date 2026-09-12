@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Проекты Серикболулы Ерсултана: сайты для кондитерского дома и ресторана."
+    />
+    <title>Проекты — Ерсултан</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <style>
+      :root {
+        --ink: #101126;
+        --paper: #f4f1e9;
+        --lime: #d9ff49;
+        --blue: #8193ff;
+        --wine: #5e1c28;
+        --line: rgba(16, 17, 38, 0.18);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        min-width: 320px;
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      .page { width: min(100% - 48px, 1320px); margin: 0 auto; }
+
+      header {
+        min-height: 84px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+
+      .logo-mark {
+        width: 30px;
+        height: 30px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--ink);
+        border-radius: 50%;
+        font-family: Georgia, serif;
+        font-size: 1.1rem;
+        font-style: italic;
+      }
+
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+
+      .back span { font-size: 1.3rem; transition: transform 0.2s ease; }
+      .back:hover span { transform: translateX(-4px); }
+
+      main { padding: 80px 0 120px; }
+
+      .eyebrow {
+        margin: 0 0 24px;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+
+      h1 {
+        max-width: 1120px;
+        margin: 0;
+        font-size: clamp(3.7rem, 9vw, 10rem);
+        line-height: 0.82;
+        letter-spacing: -0.1em;
+      }
+
+      h1 em,
+      .more-work h2 em,
+      .reviews h2 em {
+        color: #5d68d8;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+      }
+
+      .intro {
+        max-width: 515px;
+        margin: 42px 0 86px auto;
+        font-size: 1.08rem;
+        line-height: 1.48;
+      }
+
+      .case-list { display: grid; gap: 68px; }
+
+      .case {
+        display: grid;
+        grid-template-columns: 0.47fr 1.53fr;
+        gap: 30px;
+        padding-top: 17px;
+        border-top: 1px solid var(--line);
+      }
+
+      .case-meta {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 420px;
+      }
+
+      .case-number {
+        color: #5d68d8;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+
+      .case-meta h2 {
+        margin: 20px 0 0;
+        font-size: clamp(2.1rem, 3.2vw, 3.9rem);
+        line-height: 0.87;
+        letter-spacing: -0.08em;
+      }
+
+      .case-meta p {
+        max-width: 275px;
+        margin: 26px 0 0;
+        color: rgba(16, 17, 38, 0.7);
+        font-size: 0.96rem;
+        line-height: 1.42;
+      }
+
+      .case-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 35px;
+      }
+
+      .case-tags span {
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+
+      .shots {
+        display: grid;
+        grid-template-columns: 1.35fr 0.65fr;
+        gap: 12px;
+        min-height: 455px;
+      }
+
+      .shots img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        border: 1px solid rgba(16, 17, 38, 0.12);
+        border-radius: 4px;
+        box-shadow: 0 15px 34px rgba(16, 17, 38, 0.12);
+      }
+
+      .shots img:last-child { object-position: left top; }
+
+      .more-work {
+        display: grid;
+        grid-template-columns: 0.55fr 1.45fr;
+        gap: 40px;
+        margin-top: 124px;
+        padding: 100px 0;
+        background: var(--ink);
+        color: var(--paper);
+        box-shadow: 0 0 0 100vmax var(--ink);
+        clip-path: inset(0 -100vmax);
+      }
+
+      .more-work .eyebrow { color: var(--lime); }
+
+      .more-work h2,
+      .reviews h2 {
+        max-width: 910px;
+        margin: 0;
+        font-size: clamp(2.2rem, 4.8vw, 5.5rem);
+        line-height: 0.9;
+        letter-spacing: -0.08em;
+      }
+
+      .more-work p {
+        max-width: 650px;
+        margin: 30px 0 0;
+        color: rgba(244, 241, 233, 0.72);
+        font-size: 1.08rem;
+        line-height: 1.47;
+      }
+
+      .more-work-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 48px;
+      }
+
+      .more-work-list div {
+        min-height: 116px;
+        padding: 16px;
+        border: 1px solid rgba(244, 241, 233, 0.23);
+      }
+
+      .more-work-list span {
+        display: block;
+        margin-bottom: 32px;
+        color: var(--lime);
+        font-size: 0.68rem;
+        font-weight: 800;
+      }
+
+      .more-work-list b { font-size: 0.95rem; line-height: 1.2; }
+
+      .reviews {
+        padding-top: 118px;
+      }
+
+      .reviews-head {
+        display: grid;
+        grid-template-columns: 0.55fr 1.45fr;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+
+      .reviews-note {
+        max-width: 620px;
+        margin: 30px 0 0;
+        color: rgba(16, 17, 38, 0.7);
+        font-size: 1rem;
+        line-height: 1.46;
+      }
+
+      .review-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .review {
+        min-height: 270px;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid var(--line);
+        background: #fffdf8;
+      }
+
+      .review-number {
+        color: #5d68d8;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+
+      .review p {
+        margin: 34px 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.4rem;
+        font-style: italic;
+        line-height: 1.15;
+      }
+
+      .review footer {
+        min-height: 0;
+        display: block;
+        border: 0;
+        color: rgba(16, 17, 38, 0.58);
+        font-size: 0.68rem;
+        line-height: 1.3;
+      }
+
+      footer {
+        min-height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid var(--line);
+        color: rgba(16, 17, 38, 0.62);
+        font-size: 0.67rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      footer a { color: #5d68d8; }
+
+      @media (max-width: 800px) {
+        .page { width: min(100% - 32px, 1320px); }
+        header { min-height: 72px; }
+        main { padding: 62px 0 82px; }
+        h1 { font-size: clamp(3.5rem, 14vw, 6.4rem); }
+        .intro { margin: 35px 0 58px; font-size: 0.98rem; }
+        .case-list { gap: 48px; }
+        .case { grid-template-columns: 1fr; gap: 25px; }
+        .case-meta { min-height: 0; }
+        .case-meta h2 { font-size: 2.8rem; }
+        .case-tags { margin-top: 26px; }
+        .shots { min-height: 360px; grid-template-columns: 1fr; }
+        .shots img:last-child { display: none; }
+        .more-work { grid-template-columns: 1fr; gap: 28px; margin-top: 82px; padding: 74px 0; }
+        .more-work-list { grid-template-columns: 1fr; }
+        .more-work-list div { min-height: 84px; display: grid; grid-template-columns: 60px 1fr; align-items: center; }
+        .more-work-list span { margin: 0; }
+        .reviews { padding-top: 80px; }
+        .reviews-head { grid-template-columns: 1fr; gap: 23px; margin-bottom: 38px; }
+        .review-list { grid-template-columns: 1fr; }
+        .review { min-height: 200px; }
+        footer { min-height: 92px; flex-wrap: wrap; padding: 14px 0; }
+      }
+    </style>
+    <link rel="stylesheet" href="motion.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <a class="logo" href="index.html" aria-label="На главную">
+          <span class="logo-mark">E</span>
+          <span>ERSULTAN</span>
+        </a>
+        <nav class="top-nav" aria-label="Навигация по сайту">
+          <a href="about.html">Обо мне</a>
+          <a href="services.html">Услуги</a>
+          <a class="is-active" href="projects.html">Проекты</a>
+          <a href="contact.html">Контакты</a>
+        </nav>
+        <a class="back" href="index.html"><span>←</span> НА ГЛАВНУЮ</a>
+      </header>
+
+      <a class="scroll-cue" href="#site-footer" aria-label="Перейти к нижней части страницы">
+        <span>ЛИСТАЙ НИЖЕ</span>
+        <span class="scroll-arrow" aria-hidden="true">↓</span>
+      </a>
+
+      <main>
+        <p class="eyebrow">03 / ВЫБРАННЫЕ РАБОТЫ</p>
+        <h1>
+          Сайты, которые
+          <br />
+          уже <em>работают.</em>
+        </h1>
+        <p class="intro">
+          Здесь — часть моих работ. Некоторые проекты создавались для закрытых
+          задач, поэтому не всё можно показать публично. Но каждый из них помог
+          мне получить новый опыт в дизайне и веб-разработке.
+        </p>
+
+        <section class="case-list" aria-label="Показанные проекты">
+          <article class="case">
+            <div class="case-meta">
+              <div>
+                <span class="case-number">01 / КОНДИТЕРСКИЙ ДОМ</span>
+                <h2>Aisha</h2>
+                <p>
+                  Сайт для кондитерского дома: яркая главная страница, каталог
+                  сладостей, поиск по позициям и информация для покупателей.
+                </p>
+              </div>
+              <div class="case-tags">
+                <span>LANDING</span>
+                <span>КАТАЛОГ</span>
+                <span>UI-ДИЗАЙН</span>
+              </div>
+            </div>
+            <div class="shots">
+              <img src="assets/codex-clipboard-7cc6df52-7c24-4497-bb10-0badbeda7af9.png" alt="Главная страница сайта Aisha" />
+              <img src="assets/codex-clipboard-fd42bcfe-1ba9-4d1b-9c33-641ca8c2a706.png" alt="Блок филиалов сайта Aisha" />
+            </div>
+          </article>
+
+          <article class="case">
+            <div class="case-meta">
+              <div>
+                <span class="case-number">02 / РЕСТОРАН И КАРАОКЕ-БАР</span>
+                <h2>Кувшин</h2>
+                <p>
+                  Многостраничный сайт ресторана: атмосферная главная страница,
+                  раздел меню и понятная навигация для гостей.
+                </p>
+              </div>
+              <div class="case-tags">
+                <span>MULTI-PAGE</span>
+                <span>МЕНЮ</span>
+                <span>RESPONSIVE</span>
+              </div>
+            </div>
+            <div class="shots">
+              <img src="assets/codex-clipboard-abb43716-3858-446c-93cc-667a7d3e7bd8.png" alt="Главная страница сайта ресторана Кувшин" />
+              <img src="assets/codex-clipboard-1afb48a8-d84f-4d94-929f-6ab3039dd3ee.png" alt="Страница меню сайта ресторана Кувшин" />
+            </div>
+          </article>
+        </section>
+
+        <section class="more-work">
+          <p class="eyebrow">ЧАСТЬ РАБОТ ОСТАЁТСЯ ЗА КАДРОМ</p>
+          <div>
+            <h2>
+              В личном архиве — ещё <em>больше</em> сделанных работ.
+            </h2>
+            <p>
+              Не все проекты можно публиковать в открытом доступе. Поэтому в
+              портфолио я показываю только те кейсы и экраны, которые можно
+              раскрыть без нарушения приватности клиентов.
+            </p>
+            <div class="more-work-list">
+              <div><span>01</span><b>Закрытые клиентские<br />проекты</b></div>
+              <div><span>02</span><b>Учебные и личные<br />разработки</b></div>
+              <div><span>03</span><b>Эксперименты<br />с интерфейсами</b></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="reviews">
+          <div class="reviews-head">
+            <p class="eyebrow">ОТЗЫВЫ</p>
+            <div>
+              <h2>Обратная <em>связь.</em></h2>
+              <p class="reviews-note">
+                Небольшие примеры формата обратной связи. Здесь появится ваши отзывы.
+              </p>
+            </div>
+          </div>
+
+          <div class="review-list" aria-label="Места для анонимных отзывов">
+            <article class="review">
+              <span class="review-number">ОТЗЫВ 01</span>
+              <p>«Работать было легко: все пожелания внимательно выслушали, а сайт получился современным и понятным. Особенно понравилось, что результат хорошо выглядит и на телефоне.»</p>
+              <footer>Отзыв</footer>
+            </article>
+            <article class="review">
+              <span class="review-number">ОТЗЫВ 02</span>
+              <p>«Нужен был аккуратный сайт, который ясно покажет наши услуги. Получилась удобная структура, приятный дизайн и всё работает так, как мы ожидали.»</p>
+              <footer>Отзыв</footer>
+            </article>
+            <article class="review">
+              <span class="review-number">ОТЗЫВ 03</span>
+              <p>«Жұмыс нәтижесі өте ұнады. Сайт таза, түсінікті және телефоннан қарауға ыңғайлы болып шықты. Барлық ұсыныстарымыз ескерілді.»</p>
+              <footer>Отзыв</footer>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer id="site-footer">
+        <span>© ERSULTAN, 2026</span>
+        <a href="services.html">УСЛУГИ</a>
+        <a href="contact.html">СВЯЗАТЬСЯ →</a>
+      </footer>
+    </div>
+  </body>
+</html>
