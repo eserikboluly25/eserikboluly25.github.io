@@ -124,6 +124,33 @@
         line-height: 1.5;
       }
 
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .hero-cta {
+        min-height: 48px;
+        padding: 0 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--lime);
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+
+      .hero-cta--primary {
+        background: var(--lime);
+        color: var(--ink);
+      }
+
+      .hero-cta--secondary { color: var(--lime); }
+
       .menu {
         display: grid;
         gap: 10px;
@@ -200,6 +227,8 @@
         }
         h1 { font-size: clamp(3.1rem, 15vw, 5.3rem); }
         .intro-text { margin-top: 26px; font-size: 0.95rem; }
+        .hero-actions { margin-top: 24px; }
+        .hero-cta { flex: 1 1 190px; }
         .menu-card { min-height: 96px; padding: 16px; }
         footer { min-height: 75px; flex-wrap: wrap; padding: 14px 0; }
       }
@@ -228,14 +257,19 @@
           <h1>
             Создаю сайты
             <br />
-            <em>с характером</em>
+            для <em>малого бизнеса:</em>
             <br />
-            и смыслом.
+            каталог, услуги<br />и связь.
           </h1>
           <p class="intro-text">
-            Здесь — мои проекты, подход к работе и всё, что помогает идеям
-            становиться заметными цифровыми продуктами.
+            Помогаю показать услуги, сделать каталог понятным и добавить
+            удобную связь с клиентом через WhatsApp — от лендинга до сайта из
+            нескольких страниц.
           </p>
+          <div class="hero-actions">
+            <a class="hero-cta hero-cta--primary" href="projects.html">ПОСМОТРЕТЬ РАБОТЫ</a>
+            <a class="hero-cta hero-cta--secondary" href="https://wa.me/77788580540?text=Здравствуйте!%20Хочу%20обсудить%20сайт." target="_blank" rel="noopener">ОБСУДИТЬ САЙТ</a>
+          </div>
         </section>
 
         <nav class="menu" aria-label="Разделы портфолио">

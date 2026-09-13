@@ -168,7 +168,7 @@ a {
 .service,
 .contact,
 .case,
-.review,
+.process-step,
 .step,
 .skill,
 .more-work-list div {
@@ -179,7 +179,7 @@ a {
 .menu-card:hover,
 .service:hover,
 .contact:hover,
-.review:hover,
+.process-step:hover,
 .step:hover,
 .skill:hover,
 .more-work-list div:hover {
@@ -285,7 +285,7 @@ body.home .page {
   .menu-card:hover,
   .service:hover,
   .contact:hover,
-  .review:hover,
+  .process-step:hover,
   .step:hover,
   .skill:hover,
   .more-work-list div:hover {

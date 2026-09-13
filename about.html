@@ -211,6 +211,57 @@
         letter-spacing: -0.07em;
       }
 
+      .ux-case {
+        padding: 108px 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .ux-case-content {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 72px;
+      }
+
+      .ux-case h2 { font-size: clamp(2.4rem, 4.8vw, 5.6rem); }
+
+      .ux-solution > p {
+        max-width: 620px;
+        margin: 0 0 20px;
+        font-size: 1.08rem;
+        line-height: 1.48;
+      }
+
+      .ux-steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 38px;
+      }
+
+      .ux-step {
+        min-height: 160px;
+        padding: 18px;
+        border: 1px solid var(--line);
+      }
+
+      .ux-step span {
+        display: block;
+        margin-bottom: 28px;
+        color: #5c67d8;
+        font-size: 0.7rem;
+        font-weight: 800;
+      }
+
+      .ux-step b { display: block; font-size: 1rem; }
+
+      .ux-step p {
+        margin: 10px 0 0;
+        color: rgba(16, 17, 38, 0.68);
+        font-size: 0.82rem;
+        line-height: 1.35;
+      }
+
       .goal {
         display: grid;
         grid-template-columns: 0.55fr 1.45fr;
@@ -263,6 +314,10 @@
         .learning-note { margin-top: 25px; }
         .skills { grid-template-columns: 1fr; }
         .skill { min-height: 145px; }
+        .ux-case { padding: 76px 0; }
+        .ux-case-content { grid-template-columns: 1fr; gap: 32px; }
+        .ux-steps { grid-template-columns: 1fr; }
+        .ux-step { min-height: 105px; }
         .goal { grid-template-columns: 1fr; gap: 25px; padding: 78px 0; }
         footer { min-height: 92px; flex-wrap: wrap; padding: 14px 0; }
       }
@@ -301,21 +356,21 @@
         <section class="intro">
           <div class="intro-copy">
             <p>
-              Я начинающий <strong>IT-разработчик</strong>. Учусь создавать
-              современные сайты и хочу, чтобы каждая моя работа была понятной,
-              полезной и запоминающейся.
+              Помогаю малому бизнесу и личным проектам сделать понятный
+              <strong>сайт под задачу</strong>: показать услуги, оформить
+              каталог и привести клиента к быстрой связи в WhatsApp.
             </p>
             <p>
-              Сейчас я учусь в колледже <strong>APEC Petrotechnic Higher College</strong> и каждый день
-              развиваю навыки в веб-разработке.
+              В работе думаю о структуре, понятных текстах, адаптации под
+              телефон и простом пути пользователя до заявки.
             </p>
           </div>
 
           <div class="facts" aria-label="Коротко обо мне">
-            <div class="fact"><span>Меня зовут</span><b>Серикболулы Ерсултан</b></div>
-            <div class="fact"><span>НАПРАВЛЕНИЕ</span><b>IT-разработка и веб-дизайн</b></div>
-            <div class="fact"><span>ОБУЧЕНИЕ</span><b>APEC Petrotechnic Higher College</b></div>
-            <div class="fact"><span>СЕЙЧАС</span><b>Начинающий IT-разработчик</b></div>
+            <div class="fact"><span>ЧТО ДЕЛАЮ</span><b>Лендинги, сайты услуг и каталоги</b></div>
+            <div class="fact"><span>В ФОКУСЕ</span><b>Структура, UI-дизайн и мобильная адаптация</b></div>
+            <div class="fact"><span>СВЯЗЬ</span><b>Понятные кнопки и быстрая заявка в WhatsApp</b></div>
+            <div class="fact"><span>ФОРМАТ</span><b>Одностраничные и многостраничные сайты</b></div>
           </div>
         </section>
       </main>
@@ -323,10 +378,11 @@
       <section class="learning">
         <div class="learning-inner">
           <div class="learning-heading">
-            <h2>То, что я<br /><em>изучаю сейчас.</em></h2>
+            <h2>То, что я<br /><em>развиваю на практике.</em></h2>
             <p class="learning-note">
-              Собираю прочную базу, чтобы уверенно переходить от учебных
-              проектов к настоящим задачам.
+              Учусь в APEC Petrotechnic Higher College и развиваюсь как
+              начинающий разработчик: регулярно практикуюсь на учебных,
+              личных и клиентских задачах.
             </p>
           </div>
 
@@ -343,6 +399,32 @@
               <span class="skill-number">03</span>
               <h3>Веб-дизайн</h3>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ux-case">
+        <p class="eyebrow">UX-КЕЙС / AISHA</p>
+        <div class="ux-case-content">
+          <h2>
+            Сценарий: увидеть торт, найти нужную категорию и
+            <em>быстро написать.</em>
+          </h2>
+          <div class="ux-solution">
+            <p>
+              Задача — не перегружать посетителя: показать ассортимент,
+              подсказать, куда перейти, и оставить понятный путь к заказу.
+            </p>
+            <p>
+              Решение — крупный первый экран, навигация по категориям,
+              поиск по позициям и заметная кнопка WhatsApp. Такой маршрут
+              работает и на компьютере, и на телефоне.
+            </p>
+            <div class="ux-steps" aria-label="Путь пользователя">
+              <article class="ux-step"><span>01</span><b>Главная</b><p>Понимает, что предлагает кондитерская.</p></article>
+              <article class="ux-step"><span>02</span><b>Каталог</b><p>Выбирает категорию или ищет нужный десерт.</p></article>
+              <article class="ux-step"><span>03</span><b>WhatsApp</b><p>Переходит к удобной связи для заказа.</p></article>
+            </div>
           </div>
         </div>
       </section>

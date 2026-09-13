@@ -92,7 +92,7 @@
 
       h1 em,
       .more-work h2 em,
-      .reviews h2 em {
+      .process h2 em {
         color: #5d68d8;
         font-family: Georgia, "Times New Roman", serif;
         font-weight: 400;
@@ -144,6 +144,24 @@
         line-height: 1.42;
       }
 
+      .case-status {
+        margin: 16px 0 0;
+        color: #5d68d8;
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+      }
+
+      .case-detail { margin-top: 20px; }
+
+      .case-detail p {
+        margin: 0 0 10px;
+        font-size: 0.82rem;
+        line-height: 1.4;
+      }
+
+      .case-detail b { color: var(--ink); }
+
       .case-tags {
         display: flex;
         flex-wrap: wrap;
@@ -179,6 +197,57 @@
 
       .shots img:last-child { object-position: left top; }
 
+      .shots a { display: block; overflow: hidden; border-radius: 4px; }
+
+      .mobile-concept {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 18px;
+        align-items: center;
+        margin-top: 16px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        background: #fffdf8;
+      }
+
+      .phone-screen {
+        min-height: 188px;
+        padding: 15px 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 5px solid var(--ink);
+        border-radius: 22px;
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .phone-screen span { color: var(--lime); font-size: 0.58rem; font-weight: 800; }
+      .phone-screen b { font-size: 1rem; line-height: 0.92; letter-spacing: -0.04em; }
+      .phone-screen small { color: rgba(244, 241, 233, 0.68); font-size: 0.58rem; }
+      .phone-screen em { padding: 7px; background: var(--lime); color: var(--ink); font-size: 0.55rem; font-style: normal; font-weight: 800; text-align: center; }
+
+      .mobile-concept > div:last-child span {
+        display: block;
+        margin-bottom: 9px;
+        color: #5d68d8;
+        font-size: 0.67rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+
+      .mobile-concept > div:last-child b { display: block; font-size: 1.1rem; }
+      .mobile-concept > div:last-child p { margin: 8px 0 0; color: rgba(16, 17, 38, 0.65); font-size: 0.84rem; line-height: 1.36; }
+
+      .demo-link {
+        display: inline-flex;
+        margin-top: 14px;
+        color: #5d68d8;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+
       .more-work {
         display: grid;
         grid-template-columns: 0.55fr 1.45fr;
@@ -194,7 +263,7 @@
       .more-work .eyebrow { color: var(--lime); }
 
       .more-work h2,
-      .reviews h2 {
+      .process h2 {
         max-width: 910px;
         margin: 0;
         font-size: clamp(2.2rem, 4.8vw, 5.5rem);
@@ -233,18 +302,18 @@
 
       .more-work-list b { font-size: 0.95rem; line-height: 1.2; }
 
-      .reviews {
+      .process {
         padding-top: 118px;
       }
 
-      .reviews-head {
+      .process-head {
         display: grid;
         grid-template-columns: 0.55fr 1.45fr;
         gap: 40px;
         margin-bottom: 48px;
       }
 
-      .reviews-note {
+      .process-note {
         max-width: 620px;
         margin: 30px 0 0;
         color: rgba(16, 17, 38, 0.7);
@@ -252,14 +321,14 @@
         line-height: 1.46;
       }
 
-      .review-list {
+      .process-list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 12px;
       }
 
-      .review {
-        min-height: 270px;
+      .process-step {
+        min-height: 220px;
         padding: 22px;
         display: flex;
         flex-direction: column;
@@ -268,28 +337,19 @@
         background: #fffdf8;
       }
 
-      .review-number {
+      .process-step span {
         color: #5d68d8;
         font-size: 0.7rem;
         font-weight: 800;
         letter-spacing: 0.1em;
       }
 
-      .review p {
-        margin: 34px 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.4rem;
-        font-style: italic;
-        line-height: 1.15;
-      }
-
-      .review footer {
-        min-height: 0;
-        display: block;
-        border: 0;
+      .process-step b { font-size: 1.2rem; line-height: 1; }
+      .process-step p {
+        margin: 14px 0 0;
         color: rgba(16, 17, 38, 0.58);
-        font-size: 0.68rem;
-        line-height: 1.3;
+        font-size: 0.86rem;
+        line-height: 1.4;
       }
 
       footer {
@@ -320,14 +380,16 @@
         .case-tags { margin-top: 26px; }
         .shots { min-height: 360px; grid-template-columns: 1fr; }
         .shots img:last-child { display: none; }
+        .mobile-concept { grid-template-columns: 100px 1fr; }
+        .phone-screen { min-height: 158px; }
         .more-work { grid-template-columns: 1fr; gap: 28px; margin-top: 82px; padding: 74px 0; }
         .more-work-list { grid-template-columns: 1fr; }
         .more-work-list div { min-height: 84px; display: grid; grid-template-columns: 60px 1fr; align-items: center; }
         .more-work-list span { margin: 0; }
-        .reviews { padding-top: 80px; }
-        .reviews-head { grid-template-columns: 1fr; gap: 23px; margin-bottom: 38px; }
-        .review-list { grid-template-columns: 1fr; }
-        .review { min-height: 200px; }
+        .process { padding-top: 80px; }
+        .process-head { grid-template-columns: 1fr; gap: 23px; margin-bottom: 38px; }
+        .process-list { grid-template-columns: 1fr; }
+        .process-step { min-height: 150px; }
         footer { min-height: 92px; flex-wrap: wrap; padding: 14px 0; }
       }
     </style>
@@ -357,26 +419,28 @@
       <main>
         <p class="eyebrow">03 / ВЫБРАННЫЕ РАБОТЫ</p>
         <h1>
-          Сайты, которые
+          Кейсы: от задачи
           <br />
-          уже <em>работают.</em>
+          до понятного <em>сценария.</em>
         </h1>
         <p class="intro">
-          Здесь — часть моих работ. Некоторые проекты создавались для закрытых
-          задач, поэтому не всё можно показать публично. Но каждый из них помог
-          мне получить новый опыт в дизайне и веб-разработке.
+          Здесь — два клиентских кейса из портфолио. Рабочие версии не
+          опубликованы, поэтому показываю демо-экраны, задачи и решения,
+          которые использовал в каждом проекте.
         </p>
 
         <section class="case-list" aria-label="Показанные проекты">
           <article class="case">
             <div class="case-meta">
               <div>
-                <span class="case-number">01 / КОНДИТЕРСКИЙ ДОМ</span>
+                <span class="case-number">01 / КОНДИТЕРСКИЙ ДОМ / ЗАКАЗ</span>
                 <h2>Aisha</h2>
-                <p>
-                  Сайт для кондитерского дома: яркая главная страница, каталог
-                  сладостей, поиск по позициям и информация для покупателей.
-                </p>
+                <p class="case-status">ДЕМО-ЭКРАНЫ · РАБОЧАЯ ВЕРСИЯ НЕ ПУБЛИЧНА</p>
+                <div class="case-detail">
+                  <p><b>Задача:</b> показать ассортимент и упростить путь до заказа.</p>
+                  <p><b>Сделал:</b> структуру главной, каталог, поиск, категории и блок филиалов.</p>
+                  <p><b>Решил:</b> посетитель быстрее находит десерт и понимает, куда написать.</p>
+                </div>
               </div>
               <div class="case-tags">
                 <span>LANDING</span>
@@ -384,21 +448,30 @@
                 <span>UI-ДИЗАЙН</span>
               </div>
             </div>
-            <div class="shots">
-              <img src="assets/codex-clipboard-7cc6df52-7c24-4497-bb10-0badbeda7af9.png" alt="Главная страница сайта Aisha" />
-              <img src="assets/codex-clipboard-fd42bcfe-1ba9-4d1b-9c33-641ca8c2a706.png" alt="Блок филиалов сайта Aisha" />
+            <div>
+              <div class="shots" id="aisha-demo">
+                <a href="assets/codex-clipboard-7cc6df52-7c24-4497-bb10-0badbeda7af9.png" target="_blank" rel="noopener"><img src="assets/codex-clipboard-7cc6df52-7c24-4497-bb10-0badbeda7af9.png" alt="Главная страница сайта Aisha" /></a>
+                <a href="assets/codex-clipboard-fd42bcfe-1ba9-4d1b-9c33-641ca8c2a706.png" target="_blank" rel="noopener"><img src="assets/codex-clipboard-fd42bcfe-1ba9-4d1b-9c33-641ca8c2a706.png" alt="Блок филиалов сайта Aisha" /></a>
+              </div>
+              <div class="mobile-concept" aria-label="Концепт мобильного сценария Aisha">
+                <div class="phone-screen"><span>AISHA</span><b>Торты<br />на заказ</b><small>Каталог · Поиск</small><em>НАПИСАТЬ В WHATSAPP</em></div>
+                <div><span>МОБИЛЬНЫЙ СЦЕНАРИЙ / КОНЦЕПТ</span><b>Каталог → выбор → WhatsApp</b><p>Ключевые действия остаются на первом экране, чтобы оформить заказ было проще с телефона.</p></div>
+              </div>
+              <a class="demo-link" href="#aisha-demo">ОТКРЫТЬ ДЕМО-ЭКРАНЫ ↑</a>
             </div>
           </article>
 
           <article class="case">
             <div class="case-meta">
               <div>
-                <span class="case-number">02 / РЕСТОРАН И КАРАОКЕ-БАР</span>
+                <span class="case-number">02 / РЕСТОРАН И КАРАОКЕ-БАР / ЗАКАЗ</span>
                 <h2>Кувшин</h2>
-                <p>
-                  Многостраничный сайт ресторана: атмосферная главная страница,
-                  раздел меню и понятная навигация для гостей.
-                </p>
+                <p class="case-status">ДЕМО-ЭКРАНЫ · РАБОЧАЯ ВЕРСИЯ НЕ ПУБЛИЧНА</p>
+                <div class="case-detail">
+                  <p><b>Задача:</b> передать атмосферу заведения и быстро довести гостя до меню или брони.</p>
+                  <p><b>Сделал:</b> главную страницу, навигацию по кухне, экран меню и кнопки действия.</p>
+                  <p><b>Решил:</b> гость понимает формат ресторана и за несколько шагов переходит к нужному разделу.</p>
+                </div>
               </div>
               <div class="case-tags">
                 <span>MULTI-PAGE</span>
@@ -406,9 +479,16 @@
                 <span>RESPONSIVE</span>
               </div>
             </div>
-            <div class="shots">
-              <img src="assets/codex-clipboard-abb43716-3858-446c-93cc-667a7d3e7bd8.png" alt="Главная страница сайта ресторана Кувшин" />
-              <img src="assets/codex-clipboard-1afb48a8-d84f-4d94-929f-6ab3039dd3ee.png" alt="Страница меню сайта ресторана Кувшин" />
+            <div>
+              <div class="shots" id="kuvshin-demo">
+                <a href="assets/codex-clipboard-abb43716-3858-446c-93cc-667a7d3e7bd8.png" target="_blank" rel="noopener"><img src="assets/codex-clipboard-abb43716-3858-446c-93cc-667a7d3e7bd8.png" alt="Главная страница сайта ресторана Кувшин" /></a>
+                <a href="assets/codex-clipboard-1afb48a8-d84f-4d94-929f-6ab3039dd3ee.png" target="_blank" rel="noopener"><img src="assets/codex-clipboard-1afb48a8-d84f-4d94-929f-6ab3039dd3ee.png" alt="Страница меню сайта ресторана Кувшин" /></a>
+              </div>
+              <div class="mobile-concept" aria-label="Концепт мобильного сценария Кувшин">
+                <div class="phone-screen"><span>КУВШИН</span><b>Меню<br />и бронь</b><small>Кухня · Караоке</small><em>ВЫБРАТЬ БЛЮДО</em></div>
+                <div><span>МОБИЛЬНЫЙ СЦЕНАРИЙ / КОНЦЕПТ</span><b>Главная → меню → бронь</b><p>На телефоне приоритет отдан выбору кухни и переходу к действию без лишних экранов.</p></div>
+              </div>
+              <a class="demo-link" href="#kuvshin-demo">ОТКРЫТЬ ДЕМО-ЭКРАНЫ ↑</a>
             </div>
           </article>
         </section>
@@ -432,32 +512,38 @@
           </div>
         </section>
 
-        <section class="reviews">
-          <div class="reviews-head">
-            <p class="eyebrow">ОТЗЫВЫ</p>
+        <section class="process">
+          <div class="process-head">
+            <p class="eyebrow">КАК Я РАБОТАЮ</p>
             <div>
-              <h2>Обратная <em>связь.</em></h2>
-              <p class="reviews-note">
-                Небольшие примеры формата обратной связи. Здесь появится ваши отзывы.
+              <h2>От задачи до <em>публикации.</em></h2>
+              <p class="process-note">
+                До появления реальных отзывов важнее показать, как строится работа:
+                что происходит на каждом этапе и за что отвечает каждая сторона.
               </p>
             </div>
           </div>
 
-          <div class="review-list" aria-label="Места для анонимных отзывов">
-            <article class="review">
-              <span class="review-number">ОТЗЫВ 01</span>
-              <p>«Работать было легко: все пожелания внимательно выслушали, а сайт получился современным и понятным. Особенно понравилось, что результат хорошо выглядит и на телефоне.»</p>
-              <footer>Отзыв</footer>
+          <div class="process-list" aria-label="Этапы работы">
+            <article class="process-step">
+              <span>01 / БРИФ</span>
+              <b>Задача и структура</b>
+              <p>Обсуждаем цель сайта, страницы, аудиторию и материалы.</p>
             </article>
-            <article class="review">
-              <span class="review-number">ОТЗЫВ 02</span>
-              <p>«Нужен был аккуратный сайт, который ясно покажет наши услуги. Получилась удобная структура, приятный дизайн и всё работает так, как мы ожидали.»</p>
-              <footer>Отзыв</footer>
+            <article class="process-step">
+              <span>02 / ДИЗАЙН</span>
+              <b>Сценарий и интерфейс</b>
+              <p>Собираю понятные блоки, навигацию и будущий путь пользователя.</p>
             </article>
-            <article class="review">
-              <span class="review-number">ОТЗЫВ 03</span>
-              <p>«Жұмыс нәтижесі өте ұнады. Сайт таза, түсінікті және телефоннан қарауға ыңғайлы болып шықты. Барлық ұсыныстарымыз ескерілді.»</p>
-              <footer>Отзыв</footer>
+            <article class="process-step">
+              <span>03 / РАЗРАБОТКА</span>
+              <b>Адаптация и правки</b>
+              <p>Собираю сайт, проверяю телефонную версию и вношу согласованные правки.</p>
+            </article>
+            <article class="process-step">
+              <span>04 / ЗАПУСК</span>
+              <b>Публикация</b>
+              <p>Размещаю сайт и проверяю ссылки, формы и кнопки связи.</p>
             </article>
           </div>
         </section>
